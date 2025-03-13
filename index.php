@@ -1,28 +1,59 @@
-<?php
-// This is a single line comment
-echo "Hello World!\n";  // Adding \n for line break
+ <?php
 
-$name = "june";
-echo "My name is $name\n";  // Adding \n for line break
-var_dump($name);  // Outputs: string(4) "june"
-echo "\n";  // Line break after var_dump output
+//syntax
+echo "Hello World<br>";
 
-$age = 20;
-echo "I am $age years old\n";  // Adding \n for line break
-var_dump($age);  // Outputs: int(20)
-echo "\n";  // Line break after var_dump output
+//comments 
+ECHO "Hello world<br>";
+//variables
+$myname = "june";
+echo $myname;
+//variables scope 
+//local
+//global
+//static
+$numbers1 = 10;
+//global scope 
+$numbers3 = 50;
+function testing2(){
+  global $numbers3;
+  echo $numbers3;
+}
+testing2();
+echo $numbers3;
 
-$base = 10;
-$height = 5;
-$area = ($base * $height) / 2;  // Correct formula for the area of a triangle
-echo "The area of the triangle is $area\n";  // Adding \n for line break
+//static scope 
+function testing3(){
+  static $numbers4 = 60;
+  echo $numbers4, "<br>";
+  $numbers4++;
+}
+testing3();
+testing3();
+// echo $numbers4; // This line will cause an error because $numbers4 is not in scope here
+//arrays
+$fruits = array("apple", "banana", "orange");
+//object
+class Person {
+  public $name;
+  public $age;
+  public function __construct($name, $age){
+    $this->name = $name;
+    $this->age = $age;
+  }
+  public function introduce(){
+    echo "My name is " . $this->name . " and I am " . $this->age . " years old";
+  }
+}
+$person = new Person("june", 25);
+$person->introduce();
 
-$name = "june";
-echo "The length of the name is " . strlen($name) . "\n";  // Adding \n for line break
+//functions
+function addNumbers($num1, $num2){
+  return $num1 + $num2;
+}
+echo addNumbers(10, 20);
 
-$name = "june";
-$name = str_replace("j", "J", $name);
-echo $name . "\n";  // Outputs: June
-
-
+//syntax
+echo "Hello World<br>";
 ?>
